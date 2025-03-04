@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./Button";
+import Button from "./button";
+import { expect, within } from "@storybook/test";
 
 const meta = {
   title: "component/Button",
@@ -14,16 +15,25 @@ export const Primary: Story = {
   args: {
     variant: "contained",
     children: "Primary",
+    onClick: () => console.log("Clicked"),
   },
   argTypes: {
     children: {},
+    onClick: { action: "clicked" },
+  },
+  play: ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const btn = canvas.getByRole("button", { name: "Primary" });
+
+    expect(btn).toBeDefined();
+    // userEvent.type(btn, "{enter}");
   },
 };
 
 export const Outlined: Story = {
   args: {
     variant: "outlined",
-    children: "Outlined",
+    children: "Button",
   },
   argTypes: {},
 };
@@ -31,7 +41,58 @@ export const Outlined: Story = {
 export const Text: Story = {
   args: {
     variant: "text",
-    children: "Text",
+    children: "Button",
+    href: "http://google.com",
   },
-  argTypes: {},
+  argTypes: {
+    children: {},
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const btn = canvas.getByRole("link", { name: "Button" });
+
+    expect(btn).toHaveAttribute("href", "http://google.com");
+  },
+};
+
+export const DisabledContained: Story = {
+  args: {
+    disabled: true,
+    variant: "contained",
+    children: "Disabled",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const btn = canvas.getByRole("button", { name: "Disabled" });
+
+    await expect(btn).not.toBeEnabled();
+  },
+};
+
+export const DisabledOutline: Story = {
+  args: {
+    disabled: true,
+    variant: "outlined",
+    children: "Disabled",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const btn = canvas.getByRole("button", { name: "Disabled" });
+
+    await expect(btn).not.toBeEnabled();
+  },
+};
+
+export const DisabledText: Story = {
+  args: {
+    disabled: true,
+    variant: "text",
+    children: "Disabled",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const btn = canvas.getByRole("button", { name: "Disabled" });
+
+    await expect(btn).not.toBeEnabled();
+  },
 };

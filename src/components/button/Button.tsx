@@ -1,11 +1,9 @@
 import { ComponentProps, PropsWithChildren } from "react";
 import { Button as MuiButton } from "@mui/material";
+import { ButtonVariantProps, StyledButton } from "./button-variants";
 
-type ButtonProps = PropsWithChildren<
-  ComponentProps<typeof MuiButton> & {
-    variant?: "contained" | "outlined" | "text" | "lined";
-    size: "small" | "medium" | "large";
-  }
+type IButtonProps = PropsWithChildren<
+  ComponentProps<typeof MuiButton> & ButtonVariantProps
 >;
 
 const Button = ({
@@ -13,12 +11,12 @@ const Button = ({
   size = "medium",
   children,
   ...props
-}: ButtonProps) => {
+}: IButtonProps) => {
   return (
-    <MuiButton variant={variant} size={size} {...props}>
+    <StyledButton variant={variant} size={size} href={props.href} {...props}>
       {children}
-    </MuiButton>
+    </StyledButton>
   );
 };
 
-export { Button };
+export default Button;
