@@ -10,6 +10,7 @@ export const StyledButton = styled(MuiButton, {
   shouldForwardProp: (prop) => prop !== "variant",
 })<ButtonVariantProps>(({ theme, variant, size }) => ({
   borderRadius: 12,
+  fontFamily: theme.typography.fontFamily,
   "--primary": theme.palette.primary.main,
   "--hover-color": theme.palette.primary.main,
 
@@ -21,12 +22,6 @@ export const StyledButton = styled(MuiButton, {
   ...(size === "medium" && {
     padding: "8px 24px",
   }),
-
-  // ...(variant === "outline-white" && {
-  //   backgroundColor: theme.palette.common.white,
-  //   border: `1px solid var(--primary)`,
-  //   color: theme.palette.text.primary,
-  // }),
 
   ...(variant === "contained" && {
     backgroundColor: "var(--primary)",

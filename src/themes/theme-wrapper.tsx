@@ -1,15 +1,15 @@
-import React, { PropsWithChildren } from "react";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { PropsWithChildren } from "react";
 import { useCustomTheme } from "./useCutomTheme";
+import { CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 
 export const ThemeWrapper = ({ children }: PropsWithChildren) => {
-  const { muiTheme, styledTheme } = useCustomTheme();
+  const { muiTheme } = useCustomTheme();
 
   return (
     <ThemeProvider theme={muiTheme}>
       <CssBaseline />
-      <StyledThemeProvider theme={styledTheme}>{children}</StyledThemeProvider>
+      {children}
     </ThemeProvider>
   );
 };

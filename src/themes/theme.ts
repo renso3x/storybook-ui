@@ -1,4 +1,4 @@
-import { PaletteColor } from "@mui/material";
+import { PaletteColor, Theme } from "@mui/material";
 import { colors } from "./colors";
 
 declare module "@mui/material/styles" {
@@ -37,4 +37,7 @@ export const sharedTheme = {
       main: colors.monochrome[500],
     },
   },
-};
+  typography: {
+    fontFamily: [`"Open Sans", sans-serif`].join(","),
+  },
+} as unknown as Theme;
