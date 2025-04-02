@@ -1,17 +1,11 @@
 import { Typography } from "@mui/material";
 import { ComponentProps, PropsWithChildren } from "react";
-import { StyledText, TextVariantProps } from "./styles";
+import { StyledText } from "./variants";
 
-type TextProps = PropsWithChildren<
-  ComponentProps<typeof Typography> & TextVariantProps
->;
+type TextProps = PropsWithChildren<ComponentProps<typeof Typography>>;
 
-const Text = ({ type, children, ...props }: TextProps) => {
-  return (
-    <StyledText type={type} {...props}>
-      {children}
-    </StyledText>
-  );
+const Text = ({ children, ...props }: TextProps) => {
+  return <StyledText {...props}>{children}</StyledText>;
 };
 
 export default Text;

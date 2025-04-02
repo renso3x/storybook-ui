@@ -9,10 +9,10 @@ export interface ButtonVariantProps {
 export const StyledButton = styled(MuiButton, {
   shouldForwardProp: (prop) => prop !== "variant",
 })<ButtonVariantProps>(({ theme, variant, size }) => ({
-  borderRadius: 12,
+  borderRadius: 6,
   fontFamily: theme.typography.fontFamily,
   "--primary": theme.palette.primary.main,
-  "--hover-color": theme.palette.primary.main,
+  "--hover-color": theme.palette.midTeal[800],
 
   ...(size === "large" && {
     padding: "16px 24px",

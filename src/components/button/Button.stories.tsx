@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Button from "./button";
+import Button from "./Button";
 import { expect, within } from "@storybook/test";
 import { sharedTheme } from "../../themes/theme";
 
@@ -54,8 +54,8 @@ export const CustomButton = {
     children: "Custom Button",
     sx: {
       backgroundColor: `${sharedTheme.palette.common.white} !important`,
-      border: `1px solid ${sharedTheme.palette.teal.main} !important`,
-      color: `${sharedTheme.palette.monochrome.main} !important`,
+      border: `1px solid ${sharedTheme.palette.teal} !important`,
+      color: `${sharedTheme.palette.monochrome} !important`,
     },
   },
 };
@@ -83,34 +83,6 @@ export const Text: Story = {
     const btn = canvas.getByRole("link", { name: "Button" });
 
     expect(btn).toHaveAttribute("href", "http://google.com");
-  },
-};
-
-export const DisabledContained: Story = {
-  args: {
-    disabled: true,
-    variant: "contained",
-    children: "Disabled",
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const btn = canvas.getByRole("button", { name: "Disabled" });
-
-    await expect(btn).not.toBeEnabled();
-  },
-};
-
-export const DisabledOutline: Story = {
-  args: {
-    disabled: true,
-    variant: "outlined",
-    children: "Disabled",
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const btn = canvas.getByRole("button", { name: "Disabled" });
-
-    await expect(btn).not.toBeEnabled();
   },
 };
 

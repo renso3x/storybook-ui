@@ -1,6 +1,6 @@
 import { ComponentProps, PropsWithChildren } from "react";
 import { Button as MuiButton } from "@mui/material";
-import { ButtonVariantProps, StyledButton } from "./button-variants";
+import { ButtonVariantProps, StyledButton } from "./variants";
 
 type ButtonProps = PropsWithChildren<
   ComponentProps<typeof MuiButton> & ButtonVariantProps

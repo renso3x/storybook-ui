@@ -1,4 +1,4 @@
-import { StyledLink } from "./link-variants";
+import { StyledLink } from "./variants";
 
 const Link = () => {
   return (

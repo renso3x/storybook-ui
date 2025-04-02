@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import ButtonLink from "./link";
+import ButtonLink from "./Link";
 import { expect, within } from "@storybook/test";
 
 const meta = {

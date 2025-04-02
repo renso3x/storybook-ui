@@ -22,16 +22,23 @@ declare module "@mui/material/styles" {
 export const sharedTheme = {
   palette: {
     common: {
+      brand: colors.brand,
       black: colors.black,
       white: colors.white,
     },
     grey: colors.monochrome,
-    teal: colors.teal,
     midTeal: colors.midTeal,
     monochrome: colors.monochrome,
+    lightTeal: colors.lightTeal,
+    darkTeal: colors.darkTeal,
+    green: colors.green,
+    error: colors.errorRed,
+    xRed: colors.xRed,
+    xOrange: colors.xOrange,
+    xYellow: colors.xYellow,
+    xTangerine: colors.xTangerine,
     primary: {
-      main: colors.teal.main,
-      contrastText: colors.white,
+      main: colors.midTeal[700],
     },
     disabled: {
       main: colors.monochrome[500],
@@ -39,5 +46,25 @@ export const sharedTheme = {
   },
   typography: {
     fontFamily: [`"Open Sans", sans-serif`].join(","),
+    h1: {
+      fontSize: "24px",
+    },
+    h2: {
+      fontSize: "20px",
+    },
+    h3: {
+      fontSize: "18px",
+    },
+    body1: {
+      fontSize: "16px",
+    },
+    subtitle1: {
+      fontSize: "14px",
+      textTransform: "uppercase",
+    },
+    subtitle2: {
+      fontSize: "14px",
+      textTransform: "capitalize",
+    },
   },
 } as unknown as Theme;
