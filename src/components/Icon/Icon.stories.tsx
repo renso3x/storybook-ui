@@ -21,7 +21,16 @@ export default {
       defaultValue: 32,
     },
   },
-} as Meta<typeof Icon>;
+} as Meta;
+
+type Story = StoryObj<typeof Icon>;
+
+export const Primary: Story = {
+  args: {
+    name: "AddDate",
+  },
+  argTypes: {},
+};
 
 const Template = () => {
   return (
