@@ -27,7 +27,18 @@ export const Primary: Story = {
     const btn = canvas.getByRole("button", { name: "Primary" });
 
     expect(btn).toBeDefined();
-    // userEvent.type(btn, "{enter}");
+  },
+};
+
+export const ButtonLink: Story = {
+  args: {
+    href: "http://google.com",
+    target: "_blank",
+    children: "Link",
+  },
+  argTypes: {
+    children: {},
+    onClick: { action: "clicked" },
   },
 };
 

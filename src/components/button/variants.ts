@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Button as MuiButton } from "@mui/material";
+import { Link, Button as MuiButton } from "@mui/material";
 
 export interface ButtonVariantProps {
   variant?: "contained" | "outlined" | "text";
@@ -48,4 +48,12 @@ export const StyledButton = styled(MuiButton, {
       cursor: "not-allowed",
     },
   }),
+}));
+
+export const StyledLink = styled(Link)(({ theme }) => ({
+  "--primary": theme.palette.midTeal[700],
+  color: "var(--primary)",
+  fontWeight: "bold",
+  textTransform: "none",
+  textDecoration: "underline",
 }));
