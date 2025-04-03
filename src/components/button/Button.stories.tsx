@@ -2,6 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
 import { expect, within } from "@storybook/test";
 import { sharedTheme } from "../../themes/theme";
+import Icon from "../Icon/Icon";
 
 const meta = {
   title: "component/Button",
@@ -25,6 +26,28 @@ export const Primary: Story = {
   play: ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const btn = canvas.getByRole("button", { name: "Primary" });
+
+    expect(btn).toBeDefined();
+  },
+};
+
+export const TextWithIcon: Story = {
+  args: {
+    variant: "text",
+    children: (
+      <>
+        <Icon name="AddDate" />
+        Date
+      </>
+    ),
+    sx: { gap: 1 },
+  },
+  argTypes: {
+    children: {},
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const btn = canvas.getByRole("button", { name: "Date" });
 
     expect(btn).toBeDefined();
   },
