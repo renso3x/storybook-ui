@@ -78,8 +78,10 @@ import { ThunderCircle } from "./svg/thunder-circle";
 import { Recall } from "./svg/recall";
 import { CloseCircle } from "./svg/close-circle";
 import { ClockCircle } from "./svg/clock-circle";
+import { CheckCircle } from "./svg/check-circle";
 
 export const IconsMap = {
+  CheckCircle,
   Mileage,
   Expiring,
   ExpiredLoan,
