@@ -9,6 +9,7 @@ declare module "@mui/material/styles" {
     };
     teal: Record<number, string>;
     midTeal: Record<number, string>;
+    lightTeal: Record<number, string>;
     monochrome: Record<number, string>;
     primary: PaletteColor;
     disabled: PaletteColor;
