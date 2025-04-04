@@ -1,54 +1,106 @@
-# React + TypeScript + Vite
+# UI Shared Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a **shared UI component library** built using **React** and **Vite**, designed for reuse across multiple applications. The goal is to provide a consistent, easily maintainable, and scalable design system that accelerates development and ensures visual consistency across products.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **React** with fast refresh and HMR (Hot Module Replacement) via **Vite**
+- 🧱 Prebuilt **shared components** following the Connexion Design System
+- 🎨 Figma design integration for accurate visual matching
+- 📦 Ready to publish as an npm package (optional)
+- 🧹 Code linting with **ESLint**
+- 📚 Component documentation and previews via **Storybook**
 
-## Expanding the ESLint configuration
+## 📁 Folder Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+ui-shared-library/
+├── .storybook/         # Storybook configuration
+├── src/
+│   ├── components/     # Shared UI components
+│   ├── hooks/          # Reusable custom React hooks (optional)
+│   └── index.ts        # Export components for consumption
+├── public/             # Static assets
+├── vite.config.ts      # Vite configuration
+├── tsconfig.json       # TypeScript configuration
+├── .eslintrc.js        # ESLint rules
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Design Reference
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+All components follow the design guidelines provided in the Connexion Design System. For reference, please consult the Figma file linked below:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+👉 [Figma File](https://www.figma.com/design/gwL0YfUs4PHz986Pt5HiaE/Connexion-Design-System---Component-Library?node-id=3532-309&t=cCwa6UutVS5toMZ9-0)
+
+## 🚀 Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
 ```
+
+### 2. Run Storybook (Component Previews)
+
+Storybook is used to develop and showcase individual components in isolation.
+
+```bash
+npm run storybook
+```
+
+Storybook will be available at [http://localhost:6006](http://localhost:6006) by default.
+
+### 3. Build the library
+
+To generate a bundled version of the library for distribution:
+
+```bash
+npm run build
+```
+
+### 4. Lint your code
+
+To run ESLint:
+
+```bash
+npm run lint
+```
+
+## 📦 Publishing (Optional)
+
+To publish your library as a package to npm:
+
+1. Ensure your components are exported via `src/index.ts`
+2. Build the library:
+   ```bash
+   npm run build
+   ```
+3. Login and publish:
+   ```bash
+   npm login
+   npm publish
+   ```
+
+> 🔐 Consider setting `"private": true` in `package.json` if you don’t want it published.
+
+## 🧑‍💻 Tech Stack
+
+- **React**
+- **TypeScript**
+- **Vite**
+- **Storybook**
+- **ESLint**
+- **Figma** (for design specs)
+
+## 📬 Contributing
+
+1. Fork the repo
+2. Create your feature branch: `git checkout -b feat/my-new-component`
+3. Commit your changes: `git commit -m "Add new component"`
+4. Push to the branch: `git push origin feat/my-new-component`
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License.
