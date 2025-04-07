@@ -8,14 +8,21 @@ const Checkbox = ({
   tooltip = true,
   tooltipPlacement = "top-start",
   onChange,
+  checkboxSx,
+  tooltipSx,
   ...checkboxProps
 }: CheckboxProps) => {
   const checkboxElement = (
-    <MuiCheckbox onChange={onChange} {...checkboxProps} />
+    <MuiCheckbox onChange={onChange} {...checkboxProps} sx={checkboxSx} />
   );
 
   return tooltip ? (
-    <CustomTooltip title={title || ""} placement={tooltipPlacement} arrow>
+    <CustomTooltip
+      title={title || ""}
+      placement={tooltipPlacement}
+      sx={tooltipSx}
+      arrow
+    >
       <FormControlLabel control={checkboxElement} label={label} />
     </CustomTooltip>
   ) : (

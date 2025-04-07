@@ -1,8 +1,7 @@
 import { ComponentProps } from "react";
 import MuiCheckbox from "@mui/material/Checkbox";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
-import { styled } from "@mui/material/styles";
-
+import { styled, SxProps, Theme } from "@mui/material/styles";
 export type ToolTipPlacements = TooltipProps["placement"];
 
 export type CheckboxProps = ComponentProps<typeof MuiCheckbox> & {
@@ -10,6 +9,8 @@ export type CheckboxProps = ComponentProps<typeof MuiCheckbox> & {
   label?: string;
   title?: string;
   tooltipPlacement?: ToolTipPlacements;
+  checkboxSx?: SxProps<Theme>;
+  tooltipSx?: SxProps<Theme>;
 };
 
 export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (

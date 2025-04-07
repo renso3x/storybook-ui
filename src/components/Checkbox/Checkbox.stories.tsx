@@ -37,6 +37,18 @@ export default {
       },
       description: "tooltip placement",
     },
+    checkboxSx: {
+      control: {
+        type: "object",
+      },
+      description: "Checkbox styles",
+    },
+    tooltipSx: {
+      control: {
+        type: "object",
+      },
+      description: "Tooltip styles",
+    },
   },
 } as Meta;
 
@@ -47,5 +59,30 @@ export const Primary: Story = {
     title: "Mark as done",
     label: "Done",
     tooltipPlacement: "top-start",
+  },
+};
+
+export const CustomTooltip: Story = {
+  args: {
+    title: "Custom Tooltip",
+    label: "Custom",
+    tooltipPlacement: "top-start",
+    checkboxSx: {
+      "&.Mui-checked": {
+        color: "blue",
+      },
+    },
+    tooltipSx: {
+      "& .MuiTooltip-tooltip": {
+        backgroundColor: "blue",
+        color: "white",
+        fontSize: "16px",
+        padding: "10px",
+        borderRadius: "8px",
+      },
+      "& .MuiTooltip-arrow": {
+        color: "blue",
+      },
+    },
   },
 };
