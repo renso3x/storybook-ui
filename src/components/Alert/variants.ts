@@ -1,4 +1,9 @@
-import { Alert, styled } from "@mui/material";
+import { Alert, styled, SxProps, Theme } from "@mui/material";
+import { PropsWithChildren, ComponentProps } from "react";
+
+export type AlertProps = PropsWithChildren<ComponentProps<typeof Alert>> & {
+  sx?: SxProps<Theme>;
+};
 
 export const StyledAlert = styled(Alert)(({ theme }) => ({
   "& .MuiAlert-icon": {

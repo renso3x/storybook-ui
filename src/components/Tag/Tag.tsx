@@ -1,8 +1,4 @@
-import { ComponentProps } from "react";
-import { Chip } from "@mui/material";
-import { StyledChip } from "./variants";
-
-type TagProps = ComponentProps<typeof Chip>;
+import { StyledChip, TagProps } from "./variants";
 
 const Tag = (props: TagProps) => {
   return <StyledChip {...props} />;

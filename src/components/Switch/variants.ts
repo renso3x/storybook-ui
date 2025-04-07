@@ -1,4 +1,11 @@
-import { styled, Switch } from "@mui/material";
+import { styled, Switch, SxProps, Theme } from "@mui/material";
+import { ComponentProps } from "react";
+
+export type SwitchProps = ComponentProps<typeof Switch> & {
+  label?: string;
+  formLabelSx: SxProps<Theme>;
+  switchSx?: SxProps<Theme>;
+};
 
 export const StyledSwitch = styled(Switch)(({ theme }) => ({
   width: 56,

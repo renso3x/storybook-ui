@@ -2,7 +2,7 @@ import React from "react";
 import { IconsMap, IconName } from "./type";
 
 interface IconProps {
-  name: IconName; // Restrict to known icon names
+  name: IconName;
   width?: number;
   height?: number;
   fill?: string;

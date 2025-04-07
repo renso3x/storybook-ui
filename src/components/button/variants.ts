@@ -1,9 +1,10 @@
-import { styled } from "@mui/material/styles";
+import { styled, SxProps, Theme } from "@mui/material/styles";
 import { Link, Button as MuiButton } from "@mui/material";
 
 export interface ButtonVariantProps {
   variant?: "contained" | "outlined" | "text";
   size?: "small" | "medium" | "large";
+  sx?: SxProps<Theme>;
 }
 
 export const StyledButton = styled(MuiButton, {

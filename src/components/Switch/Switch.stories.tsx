@@ -5,25 +5,17 @@ const meta = {
   title: "component/Switch",
   component: Switch,
   argTypes: {
-    label: { control: { type: "text" } },
     checked: { control: "boolean" },
-    onChange: { action: "toggled" },
+    onChange: { action: "changed" },
   },
 } satisfies Meta;
 
 export default meta;
-type Story = StoryObj<typeof Text>;
+type Story = StoryObj<typeof Switch>;
 
-export const DefaultOn: Story = {
+export const Toggle: Story = {
   args: {
-    label: "switcher",
-    checked: true,
-  },
-};
-
-export const DefaultOff: Story = {
-  args: {
-    label: "lights",
+    label: "Toggle",
     checked: false,
   },
 };
