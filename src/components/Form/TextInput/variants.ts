@@ -4,7 +4,7 @@ import { ComponentProps } from "react";
 import { FormFieldProps } from "../variants";
 
 export type TextInputProps = FormFieldProps & {
-  inputBase: ComponentProps<typeof InputBase>;
+  control: ComponentProps<typeof InputBase>;
   disabled?: boolean;
 };
 

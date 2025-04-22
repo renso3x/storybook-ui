@@ -2,14 +2,14 @@ import FormField from "../FormField";
 import { InputField, TextInputProps } from "./variants";
 
 const TextInput = ({
-  inputBase,
   disabled,
   error,
+  control,
   ...formField
 }: TextInputProps) => {
   return (
     <FormField {...formField} error={error}>
-      <InputField {...inputBase} disabled={disabled} error={!!error} />
+      <InputField {...control} disabled={disabled} error={!!error} />
     </FormField>
   );
 };
