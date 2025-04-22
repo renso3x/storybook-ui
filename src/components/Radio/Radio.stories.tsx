@@ -23,6 +23,6 @@ export const Primary: Story = {
   args: {
     label: "Primary",
     value: "primary",
-    checked: false,
+    checked: true,
   },
 };

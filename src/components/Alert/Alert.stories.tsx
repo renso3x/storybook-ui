@@ -8,6 +8,12 @@ const meta: Meta<typeof Alert> = {
   title: "component/Alert",
   component: Alert,
   argTypes: {
+    variant: {
+      control: {
+        type: "select",
+      },
+      options: ["filled", "outline"],
+    },
     severity: {
       control: {
         type: "select",

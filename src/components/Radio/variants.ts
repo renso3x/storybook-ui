@@ -3,7 +3,7 @@ import { ComponentProps } from "react";
 
 export type RadioProps = ComponentProps<typeof Radio> & {
   label?: string;
-  formLabelSx: SxProps<Theme>;
+  formLabelSx?: SxProps<Theme>;
   radioSx?: SxProps<Theme>;
 };
 
