@@ -3,7 +3,7 @@ import { Typography as MuiTypography, Typography } from "@mui/material";
 import { PropsWithChildren, ComponentProps } from "react";
 
 export type TextProps = PropsWithChildren<ComponentProps<typeof Typography>> & {
-  sx: SxProps<Theme>;
+  sx?: SxProps<Theme>;
 };
 
 export const StyledText = styled(MuiTypography, {

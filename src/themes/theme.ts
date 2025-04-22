@@ -14,6 +14,7 @@ declare module "@mui/material/styles" {
     monochrome: Record<number, string>;
     yellow: Record<number, string>;
     red: Record<number, string>;
+    errorRed: Record<number, string>;
     green: Record<number, string>;
     primary: PaletteColor;
     disabled: PaletteColor;
@@ -37,7 +38,7 @@ export const sharedTheme = {
     lightTeal: colors.lightTeal,
     darkTeal: colors.darkTeal,
     green: colors.green,
-    error: colors.errorRed,
+    errorRed: colors.errorRed,
     red: colors.xRed,
     xOrange: colors.xOrange,
     yellow: colors.xYellow,
