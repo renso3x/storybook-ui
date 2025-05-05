@@ -21,7 +21,6 @@ function App() {
           onChange: (e) => setText(e.target.value),
           placeholder: "Enter your name",
         }}
-        inputLabel={{ shrink: true }}
         error={{
           name: "Error",
           message: "Error",

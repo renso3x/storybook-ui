@@ -1,13 +1,13 @@
 import { InputLabel } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import { ComponentProps, PropsWithChildren } from "react";
-import Text from "../Text/Text";
+import { styled, SxProps } from "@mui/material/styles";
+import { PropsWithChildren } from "react";
+import Text from "../../Text/Text";
+import { Theme } from "@emotion/react";
 
 export type FormFieldProps = PropsWithChildren & {
-  inputLabel: ComponentProps<typeof InputLabel>;
   formLabel?: string;
+  formLabelsx?: SxProps<Theme>;
   error?: Error;
-  disabled?: boolean;
 };
 
 export const FormLabelError = styled(Text)(({ theme }) => ({

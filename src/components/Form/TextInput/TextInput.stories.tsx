@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import TextInput from "./TextInput";
+import { InputAdornment } from "@mui/material";
+import Icon from "../../Icon/Icon";
 
 const meta = {
   title: "component/TextInput",
@@ -37,5 +39,17 @@ export const ErrorTextField: Story = {
       name: "Error",
       message: "Please enter title",
     },
+  },
+};
+
+export const WithAdornment: Story = {
+  args: {
+    formLabel: "Search",
+    control: { name: "search" },
+    startAdornment: (
+      <InputAdornment position="start">
+        <Icon name="Search" />
+      </InputAdornment>
+    ),
   },
 };

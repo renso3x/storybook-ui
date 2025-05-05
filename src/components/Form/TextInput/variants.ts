@@ -1,46 +1,69 @@
-import InputBase from "@mui/material/InputBase";
 import { styled } from "@mui/material/styles";
-import { ComponentProps } from "react";
-import { FormFieldProps } from "../variants";
+import { ComponentProps, ReactNode } from "react";
+import { FormFieldProps } from "../FormField/variants";
+import { TextField } from "@mui/material";
 
 export type TextInputProps = FormFieldProps & {
-  control: ComponentProps<typeof InputBase>;
+  control?: ComponentProps<typeof TextField>;
   disabled?: boolean;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
 };
 
 type StyledInputProps = {
   error?: boolean;
 };
-export const InputField = styled(InputBase, {
+export const InputField = styled(TextField, {
   shouldForwardProp: (prop) => prop !== "error",
 })<StyledInputProps>(({ theme, error }) => ({
   "label + &": {
-    color: theme.palette.midTeal[900],
+    color: theme.palette.monochrome[200],
     marginTop: theme.spacing(3),
   },
-  "& .MuiInputBase-input": {
+  "& .MuiOutlinedInput-root": {
     borderRadius: 4,
-    width: "100%",
-    position: "relative",
-    border: "1px solid",
-    borderColor: error
-      ? theme.palette.errorRed[600]
-      : theme.palette.monochrome[200],
-    fontSize: 14,
-    padding: "8px 14px",
-    transition: theme.transitions.create([
-      "border-color",
-      "background-color",
-      "box-shadow",
-    ]),
-    "&:focus": {
+    backgroundColor: theme.palette.common.white,
+
+    "& fieldset": {
+      borderWidth: 1,
+      borderColor: error
+        ? theme.palette.errorRed[600]
+        : theme.palette.monochrome[200],
+    },
+    "&:hover fieldset": {
+      borderWidth: 1,
+      borderColor: error
+        ? theme.palette.errorRed[600]
+        : theme.palette.monochrome[200],
+    },
+    "&.Mui-focused fieldset": {
+      borderWidth: 1,
       borderColor: error
         ? theme.palette.errorRed[600]
         : theme.palette.monochrome[200],
     },
   },
+
+  "& .MuiInputBase-input": {
+    fontSize: 14,
+    padding: "8px 14px",
+    border: "none",
+    outline: "none",
+    transition: theme.transitions.create([
+      "border-color",
+      "background-color",
+      "box-shadow",
+    ]),
+  },
+
+  "& .MuiInputBase-adornedStart .MuiInputBase-input": {
+    paddingLeft: theme.spacing(1),
+  },
+  "& .MuiInputBase-adornedEnd .MuiInputBase-input": {
+    paddingRight: theme.spacing(1),
+  },
+
   "& .Mui-disabled": {
-    background: theme.palette.monochrome[50],
-    border: `1px solid ${theme.palette.monochrome[200]}`,
+    backgroundColor: theme.palette.monochrome[50],
   },
 }));

@@ -4,14 +4,14 @@ import { FormFieldProps, FormLabel, FormLabelError } from "./variants";
 
 const FormField = ({
   children,
-  inputLabel,
   formLabel,
+  formLabelsx,
   error,
 }: FormFieldProps) => {
   return (
     <Fragment>
       <FormControl variant="standard">
-        <FormLabel shrink {...inputLabel}>
+        <FormLabel shrink sx={formLabelsx}>
           {formLabel}
         </FormLabel>
         {children}
