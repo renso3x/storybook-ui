@@ -33,12 +33,8 @@ export const DisabledText: Story = {
 };
 
 export const ErrorTextField: Story = {
-  args: {
-    formLabel: "Title *",
-    error: {
-      name: "Error",
-      message: "Please enter title",
-    },
+  render: () => {
+    return <TextInput formLabel="Title*" error />;
   },
 };
 

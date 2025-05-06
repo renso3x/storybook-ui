@@ -7,12 +7,14 @@ const TextInput = ({
   control,
   startAdornment,
   endAdornment,
+  textInputSx,
   ...formField
 }: TextInputProps) => {
   return (
     <FormField {...formField} error={error}>
       <InputField
         {...control}
+        sx={textInputSx}
         disabled={disabled}
         error={!!error}
         slotProps={{

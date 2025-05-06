@@ -1,4 +1,4 @@
-import { styled } from "@mui/material/styles";
+import { styled, SxProps, Theme } from "@mui/material/styles";
 import { ComponentProps, ReactNode } from "react";
 import { FormFieldProps } from "../FormField/variants";
 import { TextField } from "@mui/material";
@@ -8,6 +8,7 @@ export type TextInputProps = FormFieldProps & {
   disabled?: boolean;
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
+  textInputSx?: SxProps<Theme>;
 };
 
 type StyledInputProps = {
