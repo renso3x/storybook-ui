@@ -24,6 +24,7 @@ export const InputField = styled(TextField, {
   "& .MuiOutlinedInput-root": {
     borderRadius: 4,
     backgroundColor: theme.palette.common.white,
+    paddingRight: 0,
 
     "& fieldset": {
       borderWidth: 1,
@@ -32,13 +33,11 @@ export const InputField = styled(TextField, {
         : theme.palette.monochrome[200],
     },
     "&:hover fieldset": {
-      borderWidth: 1,
       borderColor: error
         ? theme.palette.errorRed[600]
         : theme.palette.monochrome[200],
     },
     "&.Mui-focused fieldset": {
-      borderWidth: 1,
       borderColor: error
         ? theme.palette.errorRed[600]
         : theme.palette.monochrome[200],
@@ -59,9 +58,6 @@ export const InputField = styled(TextField, {
 
   "& .MuiInputBase-adornedStart .MuiInputBase-input": {
     paddingLeft: theme.spacing(1),
-  },
-  "& .MuiInputBase-adornedEnd .MuiInputBase-input": {
-    paddingRight: theme.spacing(1),
   },
 
   "& .Mui-disabled": {
