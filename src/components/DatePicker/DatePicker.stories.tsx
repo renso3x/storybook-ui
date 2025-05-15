@@ -9,9 +9,4 @@ export default {
 
 type Story = StoryObj<typeof DatePicker>;
 
-export const Primary: Story = {
-  args: {
-    name: "AddDate",
-  },
-  argTypes: {},
-};
+export const Primary: Story = {};

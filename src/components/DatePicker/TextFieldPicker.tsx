@@ -5,12 +5,16 @@ import {
 import * as React from "react";
 
 const TextFieldPicker = React.forwardRef(
-  (props: PickersTextFieldProps, ref: React.Ref<HTMLDivElement>) => (
+  (
+    { sx: styles, ...props }: PickersTextFieldProps,
+    ref: React.Ref<HTMLDivElement>
+  ) => (
     <PickersTextField
       {...props}
       ref={ref}
       size="small"
       sx={{
+        ...styles,
         "& .MuiOutlinedInput-root": {
           "& fieldset": {
             borderColor: "#ccc",

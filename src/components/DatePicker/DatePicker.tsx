@@ -12,12 +12,18 @@ const CustomDateIcon = () => (
 export default function DatePickerField({
   value,
   onChange,
+  styles,
 }: DatePickerFieldProps) {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
         value={value}
         onChange={onChange}
+        slotProps={{
+          textField: {
+            sx: styles,
+          },
+        }}
         slots={{
           textField: TextFieldPicker,
           openPickerIcon: CustomDateIcon,
