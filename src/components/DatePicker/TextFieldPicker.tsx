@@ -17,7 +17,7 @@ const TextFieldPicker = React.forwardRef(
         ...styles,
         "& .MuiOutlinedInput-root": {
           "& fieldset": {
-            borderColor: "#ccc",
+            borderColor: "#C6C6C6",
           },
           "&:hover fieldset": {
             borderColor: "#999",
@@ -27,7 +27,7 @@ const TextFieldPicker = React.forwardRef(
           },
         },
         "& .MuiInputAdornment-root": {
-          borderLeft: "1px solid #ccc",
+          borderLeft: "1px solid #C6C6C6",
           marginLeft: "4px",
           padding: "20px 6px",
         },

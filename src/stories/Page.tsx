@@ -1,8 +1,10 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 
 import { Header } from "./Header";
 import "./page.css";
 import Text from "../components/Text/Text";
+import Counter from "../components/Counter/Counter";
+import Switch from "../components/Switch/Switch";
 
 type User = {
   name: string;
@@ -10,6 +12,13 @@ type User = {
 
 export const Page: React.FC = () => {
   const [user, setUser] = React.useState<User>();
+  const [value, setValue] = useState(1);
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("Checked:", event.target.checked);
+    setChecked(event.target.checked);
+  };
 
   return (
     <article>
@@ -19,10 +28,11 @@ export const Page: React.FC = () => {
         onLogout={() => setUser(undefined)}
         onCreateAccount={() => setUser({ name: "Jane Doe" })}
       />
+      <Switch onChange={handleChange} />{" "}
+      <div>Checked: {checked ? "true" : "false"}</div>
+      <Counter count={value} onChange={setValue} />
       <section className="storybook-page">
-        <Text type="heading" variant="h1">
-          Pages in Storybook
-        </Text>
+        <Text variant="h1">Pages in Storybook</Text>
         <p>
           We recommend building UIs with a{" "}
           <a

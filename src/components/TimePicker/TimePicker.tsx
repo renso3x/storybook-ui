@@ -29,7 +29,7 @@ export default function TimePicker({ value, onChange, styles }: Props) {
                 },
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "#ccc",
+                    borderColor: "#C6C6C6",
                   },
                   "&:hover fieldset": {
                     borderColor: "#999",
@@ -39,7 +39,7 @@ export default function TimePicker({ value, onChange, styles }: Props) {
                   },
                 },
                 "& .MuiInputAdornment-root": {
-                  borderLeft: "1px solid #ccc",
+                  borderLeft: "1px solid #C6C6C6",
                   marginLeft: "4px",
                   padding: "20px 6px",
                 },
