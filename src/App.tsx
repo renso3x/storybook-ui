@@ -21,10 +21,6 @@ function App() {
           onChange: (e) => setText(e.target.value),
           placeholder: "Enter your name",
         }}
-        error={{
-          name: "Error",
-          message: "Error",
-        }}
       />
     </>
   );
