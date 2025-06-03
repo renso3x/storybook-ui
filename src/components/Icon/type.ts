@@ -79,6 +79,7 @@ import { Recall } from "./svg/recall";
 import { CloseCircle } from "./svg/close-circle";
 import { ClockCircle } from "./svg/clock-circle";
 import { CheckCircle } from "./svg/check-circle";
+import { Datepicker } from "./svg/datepicker";
 
 export const IconsMap = {
   CheckCircle,
@@ -162,6 +163,7 @@ export const IconsMap = {
   Recall,
   CloseCircle,
   ClockCircle,
+  Datepicker,
 } as const;
 
 // Type for Icon names (ensures only valid names are used)
